@@ -8,7 +8,7 @@ import { TeamService } from '../team.service';
 import { CreateCountryComponent } from './create-country/create-country.component';
 import { DeleteCountryComponent } from './delete-country/delete-country.component';
 
-const CountrDate : Country [] = [];
+const CountryData : Country [] = [];
 
 @Component({
   selector: 'app-main-page',
@@ -20,11 +20,11 @@ const CountrDate : Country [] = [];
 
 export class MainPageComponent {
 
-  displayColumns: string[] - ['countryName', 'confederationName','Actions'];
+  displayColumns: string[] = ['countryName', 'confederationName','Actions'];
   dataSource = CountryData;
   isEdit: boolean = false;
 
-  constructor(private service: TeamService,private route: ActivatedRoute, private _router: Router, public dialog: MatDialog) { }
+  constructor(private service : TeamService,private route: ActivatedRoute, private _router: Router, public dialog: MatDialog) { }
 
   ngOnInit(): void 
   {
@@ -35,7 +35,7 @@ export class MainPageComponent {
     this._router.navigate(['/ind-country', row.teamId!])
 
 }
-}
+
 addCountry(){
   let dialogRef = this.dialog.open(CreateCountryComponent, {
     data: {
@@ -121,7 +121,7 @@ GetAllTeams(){
     }
   })
 }
-
+}
 
 
 

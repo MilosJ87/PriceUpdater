@@ -24,7 +24,7 @@ export class MainPageComponent {
   dataSource = CountryData;
   isEdit: boolean = false;
 
-  constructor(private service : TeamService,private route: ActivatedRoute, private _router: Router, public dialog: MatDialog) { }
+  constructor(private service: TeamService,private route: ActivatedRoute, private _router: Router, public dialog: MatDialog) { }
 
   ngOnInit(): void 
   {

@@ -33,7 +33,7 @@ export class TeamService {
   {
     const header = new HttpHeaders().set("Content-type", 'application/json')
 
-    return this.httpClient.post(this.path+'Team/AddTeam', JSON.stringify(country){headers: header})
+    return this.httpClient.post(this.path+'Team/AddTeam', JSON.stringify(country),{headers: header})
 
   }
 

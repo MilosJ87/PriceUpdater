@@ -5,8 +5,8 @@ import { Country } from '../models/country.model';
 import { ActivatedRoute, Router } from '@angular/router';
 import { MatDialog } from '@angular/material/dialog';
 import { TeamService } from '../team.service';
-import { CreateCountryComponent } from './create-country/create-country.component';
-import { DeleteCountryComponent } from './delete-country/delete-country.component';
+import { CreateCountryComponent } from '../create-country/create-country.component';
+import { DeleteCountryComponent } from '../delete-country/delete-country.component';
 
 const CountryData : Country [] = [];
 

@@ -10,7 +10,7 @@ import { DeleteCountryComponent } from './delete-country/delete-country.componen
 @NgModule({
   declarations: [
     AppComponent,
-    DeleteCountryComponent
+    
   ],
   imports: [
     BrowserModule,

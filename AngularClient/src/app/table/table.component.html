@@ -1,0 +1,12 @@
+<table>
+    <thead>
+      <tr>
+        <th *ngFor="let column of tableData[0] | keyvalue">{{column.key}}</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let row of tableData">
+        <td *ngFor="let cell of row | keyvalue">{{cell.value}}</td>
+      </tr>
+    </tbody>
+  </table>

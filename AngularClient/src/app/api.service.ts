@@ -8,6 +8,6 @@ export class ApiService {
   constructor(private http: HttpClient) {}
 
   getKovanice() {
-    return this.http.get('http://localhost:5000/api/table');
+    return this.http.get('https://localhost:7262/api/');
   }
 }

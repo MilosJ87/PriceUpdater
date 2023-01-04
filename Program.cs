@@ -26,7 +26,7 @@ builder.Services.AddScoped<IZlatneKovaniceRepo, ZlatneKovaniceRepo>();
 
 builder.Services.AddCors(opt =>
 {
-    opt.AddPolicy(name: "CorsePolicy", builder =>
+    opt.AddPolicy(name: "CorsPolicy", builder =>
     {
         builder.WithOrigins("https://localhost:7262/")
         .AllowAnyHeader()

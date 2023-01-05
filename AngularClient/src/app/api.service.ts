@@ -14,6 +14,6 @@ export class ApiService {
   constructor(private httpClient: HttpClient) {}
 
   getAllKovanice(): Observable<any> {
-    return this.httpClient.get<any[]>(this.path + "/api/Kovanice");
+    return this.httpClient.get<any[]>(this.path + "/Kovanice/GetKovanice");
   }
 }

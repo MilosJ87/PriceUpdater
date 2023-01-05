@@ -7,7 +7,7 @@ using PriceUpdater.Repository;
 namespace PriceUpdater.Controllers
 {
     [ApiController]
-    [Route("api/")]
+    [Route("api/[controller]")]
     public class KovaniceController : ControllerBase
     {
         private readonly IZlatneKovaniceRepo _zlatneKovaniceRepo;
@@ -19,14 +19,15 @@ namespace PriceUpdater.Controllers
             _mapper = mapper ?? throw new ArgumentNullException(nameof(mapper));
         }
 
-        [HttpGet()]
+        [HttpGet("GetKovanice")]
+        [HttpHead]
         public async Task<ActionResult<IEnumerable<KovaniceDTO>>> GetAllKovanice()
         {
             var kovaniceFromRepo = await _zlatneKovaniceRepo.GetKovanice();
 
             return Ok(_mapper.Map<IEnumerable<KovaniceDTO>>(kovaniceFromRepo));
         }
-        [HttpGet("kovaniceId", Name = "GetKovanice")]
+        [HttpGet("kovaniceId", Name = "GetKovaniceById")]
         public async Task<ActionResult<KovaniceDTO>> GetKovanice(Guid kovaniceId)
         {
             var kovaniceFromRepo = await _zlatneKovaniceRepo.GetKovaniceAsync(kovaniceId);
@@ -37,7 +38,7 @@ namespace PriceUpdater.Controllers
         [HttpPost]
         public async Task<ActionResult<KovaniceDTO>> CreateKovanice([FromBody]KovaniceDTO kovaniceDTO)
         {
-            var kovaniceEntity = _mapper.Map<Zlatne_Kovanice>(kovaniceDTO);
+            var kovaniceEntity =  _mapper.Map<Zlatne_Kovanice>(kovaniceDTO);
             await _zlatneKovaniceRepo.AddKovanice(kovaniceEntity);
             await _zlatneKovaniceRepo.Save();
 

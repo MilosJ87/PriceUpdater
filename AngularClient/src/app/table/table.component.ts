@@ -14,7 +14,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 export class TableComponent implements OnInit {
   
   dataSources: MatTableDataSource<kovanice>;
-  displayColumns: string[] = ['weight', 'name', 'countryOfOrigin', 'manufactuer', 'price', 'Actions'];
+  displayColumns: string[] = ['weight', 'name', 'countryOfOrigin', 'manufactuer', 'price'];
 
   constructor(private apiService: ApiService, public dialog: MatDialog, private _snackBar: MatSnackBar) {}
 

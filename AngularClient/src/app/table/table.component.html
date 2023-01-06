@@ -2,7 +2,7 @@
   <h2>Kovanice</h2>
 <table mat-table [dataSource]="dataSources" class="mat-elevation-z8" style="width: 50%;">
   <ng-container matColumnDef="name">
-    <th mat-header-cell *matHeaderCellDef> Name </th>
+    <th mat-header-cell *matHeaderCellDef> Ime </th>
     <td mat-cell *matCellDef="let element"> {{element.name}} </td>
   </ng-container>
   <ng-container matColumnDef="weight">
@@ -15,7 +15,7 @@
   </ng-container>
   <ng-container matColumnDef="manufactuer">
     <th mat-header-cell *matHeaderCellDef> Proizvodjac </th>
-    <td mat-cell *matCellDef="let element"> {{element.manufactuer} </td>
+    <td mat-cell *matCellDef="let element"> {{element.manufactuer}} </td>
   </ng-container>
 
   <ng-container matColumnDef="price">

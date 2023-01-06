@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
 using PriceUpdater.Entities;
 using PriceUpdater.Models;
@@ -20,6 +21,7 @@ namespace PriceUpdater.Controllers
         }
 
         [HttpGet("GetKovanice")]
+        [EnableCors("CorsPolicy")]
         [HttpHead]
         public async Task<ActionResult<IEnumerable<KovaniceDTO>>> GetAllKovanice()
         {

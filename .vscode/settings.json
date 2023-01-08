@@ -1,0 +1,4 @@
+{
+    "appService.defaultWebAppToDeploy": "/subscriptions/5f03a096-1b81-40ed-a0f9-bd891ae111c4/AppServices/subscriptions/5f03a096-1b81-40ed-a0f9-bd891ae111c4/resourceGroups/rg1/providers/Microsoft.Web/sites/PriceUpdater",
+    "appService.deploySubpath": "AngularClient\\dist\\angular-client"
+}

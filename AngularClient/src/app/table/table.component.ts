@@ -4,6 +4,8 @@ import { kovanice } from '../Models/kovanice.model';
 import { MatTableDataSource,MatTable } from '@angular/material/table';
 import { MatDialog } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { MatLabel } from '@angular/material/form-field';
+import { poluge } from '../Models/poluge.model';
 
 
 @Component({
@@ -13,6 +15,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 })
 export class TableComponent implements OnInit {
   
+  dataSource: MatTableDataSource<poluge>;
   dataSources: MatTableDataSource<kovanice>;
   displayColumns: string[] = ['weight', 'name', 'countryOfOrigin', 'manufactuer', 'price'];
 
@@ -28,6 +31,13 @@ export class TableComponent implements OnInit {
     await this.apiService.getAllKovanice().subscribe((res: kovanice[] | undefined) =>
       {
         this.dataSources = new MatTableDataSource(res);
+      });
+    }
+
+    async getAllPoluge() {
+      await this.apiService.getAllPoluge().subscribe((res: poluge [] | undefined) =>
+      {
+        this.dataSource = new MatTableDataSource(res);
       });
     }
 

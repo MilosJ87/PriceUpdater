@@ -16,4 +16,8 @@ export class ApiService {
   getAllKovanice(): Observable<any> {
     return this.httpClient.get<any[]>(this.path + "/Kovanice/GetKovanice");
   }
+  getAllPoluge(): Observable<any>
+  {
+    return this.httpClient.get<any[]>(this.path+"/Poluge/GetPoluge");
+  }
 }

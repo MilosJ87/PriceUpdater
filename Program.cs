@@ -21,6 +21,7 @@ var dbConnectionString = builder.Configuration.GetConnectionString("PriceUpdater
 builder.Services.AddDbContext<PriceUpdaterContext>(options => options.UseSqlServer(dbConnectionString));
 
 builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
+builder.Services.AddScoped<IZlatnePoluge, ZlatnePoluge>();
 builder.Services.AddScoped<IZlatneKovaniceRepo, ZlatneKovaniceRepo>();
 
 

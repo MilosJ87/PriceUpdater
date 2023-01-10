@@ -52,5 +52,5 @@ jobs:
         with:
           app-name: 'PriceUpdater'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_9ED12A483F0D4D54B25EC2D77CBA4CD2 }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_C1B0DE0E9ED44FB79DCA1CBB5340B62B }}
           package: .
